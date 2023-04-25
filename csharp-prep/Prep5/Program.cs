@@ -16,9 +16,9 @@ class Program
         {   Console.WriteLine("What is your favorite number?");
             return Console.ReadLine();
         }
-        static void DisplayResult(string message)
+        static void DisplayResult(string message1, string message2)
         {
-            Console.WriteLine(message);
+            Console.WriteLine($"{message1} your square is {message2}.");
         }
         static int CreateSquare(string number)
         {
@@ -34,10 +34,9 @@ class Program
 
 
             DisplayWelcome("Welcome!");
-            DisplayResult(PromptUserName());
+            string name = PromptUserName();
             string number = PromptUserNumber();
-            DisplayResult(number);
-            DisplayResult(Convert.ToString(CreateSquare(number)));
+            DisplayResult(name,Convert.ToString(CreateSquare(number)));
             
     }
 }
