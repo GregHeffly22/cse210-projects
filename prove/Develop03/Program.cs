@@ -38,21 +38,14 @@ class Program
                     else{
                         secondary.Add(word);
                     }
-                    wordList=secondary;
-                   
-                    
-                
+                    wordList=secondary;   
             Nephi.setScripture(wordList);
-            
             Console.Clear();
-
             }
-        
+        // Display the Reference and Scripture
             refer.displayReference();
             Nephi.displayScripture();
-            
-            
-
+        // Ask for a response
             Console.WriteLine("\nType Quit to stop memorizing, press enter to continue.");
             response= Console.ReadLine();
         
