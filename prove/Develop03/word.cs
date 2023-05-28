@@ -21,7 +21,7 @@ public class Word{
         _hidden = true;
         int wordLength = _word.Length;
         string cover = "";
-        for (int i=5; i>0; i-=1){
+        for (int i=wordLength; i>0; i-=1){
             cover += "_";
         }
         _word = cover;
@@ -37,4 +37,8 @@ public class Word{
     public void setWord(string word){
         _word = word;
     }
+    public bool getStatus(){
+        return _hidden;
+    }
 }
+
