@@ -20,19 +20,19 @@ public class Reference{
         _verseStart= verse;
         _verseEnd= "";
     }
-        public Reference(string book,string chapter ,string verseStart, string verseEnd){
+    public Reference(string book,string chapter ,string verseStart, string verseEnd){
         _book= book;
         _chapter= chapter;
         _verseStart= verseStart;
         _verseEnd= verseEnd;
     }
 
-    public void displayReference(){
-        if (_verseEnd == ""){
-            Console.WriteLine($"{_book} {_chapter}:{_verseStart}");
+        public void displayReference(){
+            if (_verseEnd == ""){
+                Console.WriteLine($"{_book} {_chapter}:{_verseStart}");
         }
-        else{
-            Console.WriteLine( $"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
+            else{
+                Console.WriteLine( $"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
         }
     
 }
