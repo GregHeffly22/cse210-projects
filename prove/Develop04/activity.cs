@@ -14,9 +14,7 @@ public class Activity{
     public Activity(){
 
     }
-    public Activity(string name, string description){
-        _name = name;
-        _description = description;
+    public void setOpening(){
         _openingMessage = $"Welcome to the {_name} activity.";
     }
     public void setClosing(int duration){
