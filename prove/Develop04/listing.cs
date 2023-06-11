@@ -8,14 +8,19 @@ public class Listing:Activity{
         _promptList.Add("What are some of your favorite places to eat?");
         _promptList.Add("Have you seen anything cool today? What?");
     }
-    public void startListing(Activity listing){
+    public Listing(string name, string description){
+        _name = name;
+        _description = description;
+    }
+    public void startListing(){
         Console.Clear();
         Animation ani = new Animation();
         ani.createAnimationList();
-        listing.displayIntro();
+        setOpening();
+        displayIntro();
         ani.createAnimation(3);
         Console.WriteLine("How long would you like to list?");
-        listing.setDuration();
+        setDuration();
         
         Console.WriteLine("Get Ready...");
         
@@ -24,7 +29,7 @@ public class Listing:Activity{
         createStarters();
 
         DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(listing.getDuration());
+        DateTime end = start.AddSeconds(getDuration());
         
         Random rnd = new Random();
         Console.WriteLine(_promptList[rnd.Next(0,5)]);
@@ -35,9 +40,9 @@ public class Listing:Activity{
             Console.ReadLine();
             promptNumber +=1;
         }
-        Console.WriteLine($"You listed {promptNumber} times for {listing.getDuration()} seconds.");
-        listing.setClosing(listing.getDuration());
-        Console.WriteLine(listing.getClosing());
+        Console.WriteLine($"You listed {promptNumber} times for {getDuration()} seconds.");
+        setClosing(getDuration());
+        Console.WriteLine(getClosing());
         
         ani.createAnimation(5);
 

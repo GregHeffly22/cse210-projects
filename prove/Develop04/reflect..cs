@@ -17,16 +17,21 @@ class Reflect: Activity{
         _deepeningPrompts.Add("How can you remember that experience?");
         _deepeningPrompts.Add("What did you learn from that experience?");
     }
-    public void startReflecting(Activity reflect){
+    public Reflect(string name, string description){
+        _name = name;
+        _description = description;
+    }
+    public void startReflecting(){
         Random rnd = new Random();
         Animation ani = new Animation();
         ani.createAnimationList();
         
         Console.Clear();
-        reflect.displayIntro();
+        setOpening();
+        displayIntro();
         ani.createAnimation(3);
         Console.WriteLine("How long would you like to reflect?");
-        reflect.setDuration();
+        setDuration();
         // Start
         Console.Clear();
         Console.WriteLine("Get Ready...");
@@ -38,13 +43,13 @@ class Reflect: Activity{
         createDeepening();
         // Set up variables for later
         int selector = rnd.Next(0,3);
-        int repeat = reflect.getDuration() / 6;
-        int remainder = reflect.getDuration() % 6;
+        int repeat = getDuration() / 6;
+        int remainder = getDuration() % 6;
         Console.WriteLine($"\n{_starterPrompts[selector]}");
         Console.WriteLine("Press Enter to Continue");
         Console.ReadLine();
 
-        if (reflect.getDuration() <= 6){
+        if (getDuration() <= 6){
             selector = rnd.Next(0,6);
             Console.WriteLine($"\n{_deepeningPrompts[selector]}");
             ani.createAnimation(remainder);
@@ -60,7 +65,7 @@ class Reflect: Activity{
             Console.WriteLine($"\n{_deepeningPrompts[selector]}");
             ani.createAnimation(remainder);
             
-            Console.WriteLine(reflect.getClosing());
+            Console.WriteLine(getClosing());
             ani.createAnimation(5);
 
         }
