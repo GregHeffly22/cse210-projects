@@ -11,33 +11,33 @@ public class Activity{
         _duration = duration;
 
     }
-    public Activity(){
+    protected Activity(){
 
     }
-    public void setOpening(){
+    protected void setOpening(){
         _openingMessage = $"Welcome to the {_name} activity.";
     }
-    public void setClosing(int duration){
+    protected void setClosing(int duration){
         _closingMessage = $"You participated in {_name} for {duration} seconds";
     }
-    public void setDuration(){
+    protected void setDuration(){
         string duration = Console.ReadLine();
         _duration = Int16.Parse(duration);
         
     }
-    public string getClosing(){
+    protected string getClosing(){
         return _closingMessage;
     }
-     public string getOpening(){
+     protected string getOpening(){
         return _openingMessage;
     }
-    public string getDescription(){
+    protected string getDescription(){
         return _description;
     }
-    public int getDuration(){
+    protected int getDuration(){
         return _duration;
     }
-    public void displayIntro(){
+    protected void displayIntro(){
         Console.Clear();
         Console.WriteLine(_openingMessage);
         Console.WriteLine($"\n{_description}");
