@@ -10,6 +10,7 @@ public class Breathing: Activity{
         setOpening();
         Console.WriteLine(getOpening());
         Console.WriteLine($"\n{getDescription()}");
+        
         ani.createAnimationList();
         ani.createAnimation(3);
         // This is where I get the information for the duration
