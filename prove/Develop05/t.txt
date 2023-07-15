@@ -1,2 +1,0 @@
-simpleGoal:g,g,3
-

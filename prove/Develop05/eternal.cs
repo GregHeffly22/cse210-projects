@@ -27,19 +27,12 @@ public class Eternal:Goal{
     
     public Eternal(){
     }
-    public override void recordEvent(Level level){
-        level.showGoals();
-        List<Goal> goals = level.getGoals();
-        Console.WriteLine("Which Goal would you like to record for?");
-        string name = Console.ReadLine();
-        foreach (Goal goal in goals){
-            if (name == _name){
-                level.addPoints(_score);
 
-            }
-        }
-    }
+    
     public override string showPrintableInfo(){
         return $"{_name}: {_score} points every time";
     }
+        public override void recordEvent(Level level){
+                level.addPoints(_score);
+        }
 }
